@@ -2,4 +2,10 @@
 remote_theme: riggraz/no-style-please
 title: At the table with the data eater
 author: data eater
+
+theme_config:
+  appearance: "auto" # can be "light", "dark" or "auto"
+  back_home_text: "<-" # customize text for homepage link in post layout
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: false # show blog description in home page
 #description: Hello friend! Our main focus is to provide guides and tutorials on configuring programs on Arch Linux, as well as sharing useful and simple code snippets for a variety of themes.
