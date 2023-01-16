@@ -5,7 +5,7 @@ entries:
   - title: me
     entries:
       - title: about data eater
-        url: index
+        url: about-page
       - title: github repo
         url: https://github.com/lumpsoid
 
