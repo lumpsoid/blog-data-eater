@@ -1,0 +1,57 @@
+---
+title: "TLDR Arch linux installation"
+date: 2024-08-10
+---
+- check that you are on UEFI
+- `cat /sys/firmware/efi/fw_platform_size`
+- check that wifi module is running
+- `ip link`
+- `iwctl`
+- `device list`
+- `station wlan0 scan`
+- `station wlan0 get-networks`
+- `station wlan0 connect NAME`
+- `exit`
+- `ping archlinux.org`
+- if you need to create a partition table for disk use
+- `fdisk /dev/nvme0n1`
+- format partiotions
+- `mkfs.ext4 /dev/path`
+- for swap
+- `mkswap /dev/path`
+- for EFI boot partiotion
+- `mkfs.fat -F 32 /dev/path`
+- mounting
+  - `mount /dev/root /mnt`
+  - `mount --mkdir /dev/boot /mnt/boot`
+  - `swapon /dev/swap`
+- then installing essential packages
+  - `pacstrap -K /mnt base linux linux-firmware`
+- `genfstab -U /mnt >> /mnt/etc/fstab`
+- `arch-chroot /mnt`
+- `ln -sf /usr/share/zoneinfo/Region/City /etc/localtime`
+- `hwclock --systohc`
+- `nvim /etc/locale.gen`
+  - `en_US.UTF-8 UTF-8`
+  - `ru_RU`
+  - `locale-gen`
+- `nvim /etc/locale.conf`
+  - `LANG=en_US.UTF-8`
+- `nvim /etc/hostname`
+  - yourhostname
+- `set root password`
+  - passwd
+- `pacman -S git sudo neovim gnome-keyring zsh river`
+- boot loader installation
+  - `pacman -S grub efibootmgr os-prober`
+  - `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB`
+  - `nvim /etc/default/grub`
+    - `GRUB_DISABLE_OS_PROBER=false`
+  - `pacman -S amd-ucode`
+  - `grub-mkconfig -o /boot/grub/grub.cfg`
+- `systemctl enable NetworkManager`
+- `umount -R /mnt`
+- `reboot`
+- `useradd -s /bin/zsh <user name>`
+- `groupadd seat`
+- `usermod -aG seat <user name>`
