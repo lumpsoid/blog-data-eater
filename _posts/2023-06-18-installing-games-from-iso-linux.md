@@ -2,10 +2,6 @@
 title: "Installing Games in .ISO Format on Linux with CDemu"
 date: 2023-06-18
 ---
-# Introduction
-
-In this blog post, we will explore the process of installing games in .ISO format on Linux using CDemu, a package that emulates a CD/DVD reader. We will cover the steps to set up CDemu, load the .ISO image, mount the disk, and finally install a Windows game using Lutris. So, let's dive in!
-
 # Step 1: Installing CDemu
 
 To begin, we need to install the CDemu package, which emulates a CD/DVD reader. This package allows us to load and mount .ISO images. You can install CDemu on your Linux system using your distribution's package manager. -> https://cdemu.sourceforge.io/project/#binary
@@ -50,9 +46,5 @@ Replace `<path/to/disk>` with the path you obtained earlier, and `<path/to/mount
 Now that the disk is mounted, you can proceed to install your Windows game. One popular tool for this purpose is Lutris, which provides a user-friendly interface for managing games on Linux.
 
 Using Lutris, locate the .exe file of the game you want to install. This file should be accessible within the mounted disk. Follow the installation wizard provided by Lutris to install the game successfully.
-
-# Conclusion:
-
-By following these steps, you can install games in .ISO format on Linux using CDemu. Emulating a CD/DVD reader allows you to load and mount .ISO images, and tools like Lutris simplify the installation of Windows games. Now you can enjoy your favorite games on Linux, even those that come in .ISO format!
 
 Note: The instructions provided in this blog are based on general practices and may vary depending on your Linux distribution and specific setup. Please refer to the documentation and official websites of the respective tools for more detailed instructions.

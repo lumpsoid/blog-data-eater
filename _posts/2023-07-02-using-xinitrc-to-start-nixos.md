@@ -2,8 +2,6 @@
 title: "Using xinitrc to Start NixOS"
 date: 2023-07-02
 ---
-# Introduction
-In this blog post, we'll explore how to use xinitrc to start NixOS with a personalized configuration.
 
 # Configuration.nix
 To begin, you'll need to add the following lines to your configuration.nix file:
@@ -41,6 +39,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+
 lxqt-policykit-agent &
 dunst &  # notification daemon
 dwmblocks &  # bar for dwm
@@ -99,6 +98,3 @@ sudo nixos-rebuild switch --flake <path/to/flake>#<your config name>
 
 # Startx
 After rebuilding, restart your system and log in as your user. Finally, execute the `startx` command, and if your graphics driver is properly configured, everything should work seamlessly.
-
-# Conclusion
-In conclusion, by leveraging the power of xinitrc, you can take your NixOS customization to the next level. Whether you're tweaking keymaps, merging resources, or starting your favorite programs, xinitrc offers a flexible way to shape your NixOS experience.
