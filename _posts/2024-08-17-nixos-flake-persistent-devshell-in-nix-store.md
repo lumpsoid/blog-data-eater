@@ -109,3 +109,5 @@ sudo rm /nix/var/nix/gcroots/web-ext-devshell-env
 sudo rm /nix/var/nix/gcroots/web-ext-devshell-env-drv
 sudo rm /nix/var/nix/gcroots/web-ext-devshell-source
 ```
+
+created [bash script](https://gist.github.com/lumpsoid/ab7bf7c1027c9222c273c1e0d218d07a) for conveniently pinning and deleting links from the gcroots directory for your dev shells
